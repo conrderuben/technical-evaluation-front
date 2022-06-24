@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="expenses">
+    <h3>EXPENSES</h3>
+    <div class="expense-card"  *ngFor="let expense of expenses">
+        <div class="name">
+            {{expense.user.name}}
+        </div>
+        <div class="amount">
+            {{expense.amount.toFixed(2)}}€
+        </div>
+        <div class="description">
+            {{expense.description}}
+        </div>
+        <div class="date">
+            {{getTimeFromDate(expense)}}
+        </div>
+    </div>
+</div>
+      <div class="balance">
+        <h3>BALANCE</h3>
+        <div *ngFor="let item of balance" class="balance-card" [ngStyle]="item.amount<0?{'background-color':'#f28383'} : {'background-color': '#4ff2a6'}">
+            <div class="balace-name">{{item.name}}</div>
+            <div class="balance-value">{{item.amount}}€</div>
+        </div>
+    </div>
+</div>

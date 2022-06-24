@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "prueba-tecnica": {
+    "technical-evaluation": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/prueba-tecnica",
+            "outputPath": "dist/technical-evaluation",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -68,10 +68,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "prueba-tecnica:build:production"
+              "browserTarget": "technical-evaluation:build:production"
             },
             "development": {
-              "browserTarget": "prueba-tecnica:build:development"
+              "browserTarget": "technical-evaluation:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -79,7 +79,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "prueba-tecnica:build"
+            "browserTarget": "technical-evaluation:build"
           }
         },
         "test": {
@@ -102,5 +102,5 @@
       }
     }
   },
-  "defaultProject": "prueba-tecnica"
+  "defaultProject": "technical-evaluation"
 }
