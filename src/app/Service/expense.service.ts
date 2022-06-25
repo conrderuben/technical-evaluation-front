@@ -14,9 +14,9 @@ export class ExpenseService {
 
   constructor(private http:HttpClient) { }
 
-  getExpenses(){
-    const result = this.http.get<Expense[]>(environment.apiURL + '/expenses/');
-    return result;
+  getExpenses() : Observable<Expense[]>{
+    return this.http.get<Expense[]>(environment.apiURL + '/expenses/');
+    
   }
 
   getBalance(){
@@ -24,9 +24,9 @@ export class ExpenseService {
     return result;
   }
 
-  addExpense(expense:Expense) : Observable<Object>{
-    const result = this.http.post(environment.apiURL + '/expenses/', expense);
-    return result;
+  addExpense(expense:Expense) : Observable<void>{
+    return this.http.post<void>(environment.apiURL + '/expenses/', expense);
+
   }
 
 }

@@ -13,8 +13,8 @@ export class UserService {
 
   constructor(private http:HttpClient) { }
 
-  getUsers() : Observable<Object>{
-    const result = this.http.get(environment.apiURL + '/users/');
+  getUsers() : Observable<User[]>{
+    const result = this.http.get<User[]>(environment.apiURL + '/users/');
     return result;
   }
 

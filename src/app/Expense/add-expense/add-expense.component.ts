@@ -15,9 +15,9 @@ import { UserService } from 'src/app/Service/user.service';
 export class AddExpenseComponent implements OnInit {
 
   users:any = [];
-  expense:Expense = new Expense();
-  user:User = new User();
-  team:Team = new Team(1);
+  expense:Expense;
+  user:User;
+  team:Team = {id:1};
   date:Date = new Date();
   
 

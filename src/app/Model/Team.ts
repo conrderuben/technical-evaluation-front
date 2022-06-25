@@ -1,8 +1,4 @@
-export class Team{
-    public id:number;
+export interface Team{
+     id:number;
    
-   constructor (id:number){
-        this.id = id;
-
-   }
 }

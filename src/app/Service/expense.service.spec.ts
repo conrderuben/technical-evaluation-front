@@ -20,10 +20,6 @@ describe('ExpenseService', () => {
     httpMock.verify();
   })
 
-  it('should be created', () => {
-    expect(service).toBeTruthy();
-  });
-
   it('should get the balance', () => {
 
     const expectedResponse = [
