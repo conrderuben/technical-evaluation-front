@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Expense } from 'src/app/Model/Expense';
-import { ServiceService} from '../../Service/service.service'
+import { ExpenseService } from 'src/app/Service/expense.service';
 
 @Component({
   selector: 'app-list-expenses',
@@ -14,15 +14,15 @@ export class ListExpensesComponent implements OnInit {
   balance:any = [];
   date:Date;
 
-  constructor(private service:ServiceService, private router:Router) { }
+  constructor(private expenseService:ExpenseService, private router:Router) { }
 
   ngOnInit(): void {
-    this.service.getExpenses()
+    this.expenseService.getExpenses()
     .subscribe(data=>{
       this.expenses = data;
     })
 
-    this.service.getBalance()
+    this.expenseService.getBalance()
     .subscribe(data =>{
       console.log(data)
       this.balance = data;

@@ -10,13 +10,4 @@ export class Expense{
     public user: User;
     public team:Team;
 
-    // constructor(id:number,amount:number,description:string,date:Date,user:User,team:Team){
-         
-    //     this.id=id;
-    //     this.amount=amount;
-    //     this.description=description;
-    //     this.date=date;
-    //     this.user=user;
-    //     this.team=team;
-    // }
 }

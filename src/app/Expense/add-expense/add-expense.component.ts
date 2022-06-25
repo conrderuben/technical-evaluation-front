@@ -3,7 +3,8 @@ import { Router } from '@angular/router';
 import { Expense } from 'src/app/Model/Expense';
 import { Team } from 'src/app/Model/Team';
 import { User } from 'src/app/Model/User';
-import { ServiceService } from 'src/app/Service/service.service';
+import { ExpenseService } from 'src/app/Service/expense.service';
+import { UserService } from 'src/app/Service/user.service';
 
 
 @Component({
@@ -20,12 +21,11 @@ export class AddExpenseComponent implements OnInit {
   date:Date = new Date();
   
 
-  constructor(private service:ServiceService, private router:Router) { }
+  constructor(private expenseService:ExpenseService,private userService:UserService, private router:Router) { }
 
   ngOnInit(): void {
-    this.service.getUsers()
+    this.userService.getUsers()
     .subscribe(data=>{
-      console.log(data);
       this.users = data;
     })
     
@@ -37,7 +37,7 @@ export class AddExpenseComponent implements OnInit {
 
   addExpense(){
     this.expense.team = this.team;
-    this.service.addExpense(this.expense)
+    this.expenseService.addExpense(this.expense)
     .subscribe(data=>{
       this.router.navigate(['list-expenses'])
     })

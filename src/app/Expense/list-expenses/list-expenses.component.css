@@ -27,7 +27,7 @@
     border: 2px solid black;
     border-radius: 10px;
     margin-bottom: 10px;
-    background-color: rgb(172, 242, 242);
+    background-color: var(--blue-expense);
 }
 .expense-card div{
     display: flex;
