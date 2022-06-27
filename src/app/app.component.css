@@ -7,6 +7,7 @@ body {
 
 .aplication-title {
   text-align: center;
+  font-family: 'Quicksand', sans-serif;
 }
 
 .nav {
@@ -29,6 +30,7 @@ body {
 
 .container h3 {
   text-align: center;
+  
 }
 
 @media only screen and (max-width: 600px) {

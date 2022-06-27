@@ -39,27 +39,36 @@ export class ListExpensesComponent implements OnInit {
 
   getTimeFromDate(expense: Expense) {
     this.date = new Date(expense.date);
-    const actualDate = new Date();
-    const actualTime = actualDate.getTime();
-    const time = this.date.getTime();
-    const timeDiff = Math.round((actualTime - time) / (1000 * 60));
+    const formatter = new Intl.RelativeTimeFormat('en', {
+      numeric: 'auto',
 
-    if (timeDiff < 0) {
-      return 'Ahora';
-    } else if (timeDiff < 60) {
-      return timeDiff + ' minutos';
-    } else if (timeDiff < 1440) {
-      return Math.round(timeDiff / 60) + ' horas';
-    } else if (timeDiff < 43200) {
-      return Math.round(timeDiff / 1440) + ' días';
-    } else if (timeDiff < 525600) {
-      return Math.round(timeDiff / 43200) + ' meses';
-    } else {
-      return 'Más de un año';
-    }
+    })
+    
+    const DIVISIONS = [
+      { amount: 60, name: 'seconds' },
+      { amount: 60, name: 'minutes' },
+      { amount: 24, name: 'hours' },
+      { amount: 7, name: 'days' },
+      { amount: 4.34524, name: 'weeks' },
+      { amount: 12, name: 'months' },
+      { amount: Number.POSITIVE_INFINITY, name: 'years' }
+    ]
+    
+      let duration = (this.date.getTime() - new Date().getTime()) / 1000
+    
+      for (let i = 0; i <= DIVISIONS.length; i++) {
+        let division = DIVISIONS[i]
+        if (Math.abs(duration) < division.amount) {
+          return formatter.format(Math.round(duration), division.name as Intl.RelativeTimeFormatUnit)
+        }
+        duration /= division.amount
+      }
+      return "now";
   }
 
   getNameByUserId(id: Id): string {
     return this.users.find(user => user.id === id)?.name ?? '';
   }
+
 }
+
