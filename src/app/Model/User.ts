@@ -1,4 +1,6 @@
-export interface User{
-    id:number;
-    name:string;
+import { Id } from './Id';
+
+export class User {
+  id: Id;
+  name: string;
 }

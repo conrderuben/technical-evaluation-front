@@ -1,54 +1,54 @@
-.container{
-    display: flex; 
-    flex-direction: column; 
-    font-family: 'Quicksand', sans-serif;
+.container {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Quicksand', sans-serif;
 }
 
-.container h3{
-    text-align: center;
+.container h3 {
+  text-align: center;
 }
 
-.form-container form{
-    display: flex;
-    flex-direction: column;
-    width: 30%;
-    min-width: 300px;
-    margin: auto;
-    padding: 15px;
+.form-container form {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  min-width: 300px;
+  margin: auto;
+  padding: 15px;
 }
 
-.input-container{
-    margin: 10px auto;
-    display: flex;
-    width: 100%;
-    flex-direction: column;
+.input-container {
+  margin: 10px auto;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
 }
 
-.input-container input{
-    height: 40px;
-    width: 100%;
-    border-radius: 5px;
+.input-container input {
+  height: 40px;
+  width: 100%;
+  border-radius: 5px;
 }
-.input-container label{
-   font-weight: bold;
-   margin-bottom: 5px;
-}
-
-.input-container select{
-    height: 40px;
-    width: 100%;
-    border-radius: 5px;
+.input-container label {
+  font-weight: bold;
+  margin-bottom: 5px;
 }
 
-.submit-button{
-    background-color: var(--green-button);
-    border: none;
-    color: white;
-    padding: 10px 25px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 10px auto;
-    cursor: pointer;
+.input-container select {
+  height: 40px;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.submit-button {
+  background-color: var(--green-button);
+  border: none;
+  color: white;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px auto;
+  cursor: pointer;
 }

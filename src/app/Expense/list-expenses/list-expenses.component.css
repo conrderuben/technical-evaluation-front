@@ -1,92 +1,91 @@
-.container{
-    display: flex;  
-    font-family: 'Quicksand', sans-serif;
+.container {
+  display: flex;
+  font-family: 'Quicksand', sans-serif;
 }
-.expenses{
-    flex:1;
+.expenses {
+  flex: 1;
 }
-.balance{
-    flex:1;
-    text-align: center;
+.balance {
+  flex: 1;
+  text-align: center;
 }
 
-.container div h3{
-    text-align: center;
-    
+.container div h3 {
+  text-align: center;
 }
 
 /* EXPENSES */
-.expense-card{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content:space-between;
-    width: 60%;
-    margin: auto;
-    padding: 15px;
-    height: 60px;
-    border: 2px solid black;
-    border-radius: 10px;
-    margin-bottom: 10px;
-    background-color: var(--blue-expense);
+.expense-card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 60%;
+  margin: auto;
+  padding: 15px;
+  height: 60px;
+  border: 2px solid black;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  background-color: var(--blue-expense);
 }
-.expense-card div{
-    display: flex;
-    justify-content: space-between;
-    width: 50%;
-    font-size: 20px;
+.expense-card div {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+  font-size: 20px;
 }
-.expense-card:hover{
-    transform: scale(1.1);
-    transition: transform 0.5s;
-}
-
-div .amount{
-    display: flex;
-    justify-content: flex-end;
+.expense-card:hover {
+  transform: scale(1.1);
+  transition: transform 0.5s;
 }
 
-div .description{
-    display: flex;
-    align-items: flex-end;
+div .amount {
+  display: flex;
+  justify-content: flex-end;
 }
 
-div .date{
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
+div .description {
+  display: flex;
+  align-items: flex-end;
+}
+
+div .date {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
 }
 
 /* BALANCE */
 
-.balance-card{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content:space-between;
-    width: 60%;
-    margin: auto;
-    padding: 15px;
-    height: 60px;
-    border: 2px solid black;
-    border-radius: 10px;
-    margin-bottom: 10px;
+.balance-card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 60%;
+  margin: auto;
+  padding: 15px;
+  height: 60px;
+  border: 2px solid black;
+  border-radius: 10px;
+  margin-bottom: 10px;
 }
 
-.balance-card div{
-    display: flex;
-    justify-content: space-between;
-    width: 50%;
-    font-size: 20px;
-    align-items: center;
+.balance-card div {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+  font-size: 20px;
+  align-items: center;
 }
 
-div .balance-value{
-    display: flex;
-    justify-content: flex-end;
+div .balance-value {
+  display: flex;
+  justify-content: flex-end;
 }
 
 @media only screen and (max-width: 600px) {
-    .container{
-        display: flex;
-        flex-direction: column; 
-    }
+  .container {
+    display: flex;
+    flex-direction: column;
   }
+}

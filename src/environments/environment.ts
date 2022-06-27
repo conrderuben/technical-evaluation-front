@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   title: 'Dev Environment Heading',
-  apiURL: 'http://localhost:8080/Backend',
+  apiURL: 'http://localhost:8080/Backend'
 };
 
 /*

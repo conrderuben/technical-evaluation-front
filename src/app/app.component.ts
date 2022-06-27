@@ -9,19 +9,17 @@ import { Router } from '@angular/router';
 export class AppComponent {
   title = 'technical-evaluation';
 
-  constructor(private router: Router){}
+  constructor(private router: Router) {}
 
-  listExpenses(){
-    this.router.navigate(['list-expenses'])
+  listExpenses() {
+    this.router.navigate(['list-expenses']);
   }
 
-  addExpense(){
-    this.router.navigate(['add-expense'])
+  addExpense() {
+    this.router.navigate(['add-expense']);
   }
 
-  addUser(){
-    this.router.navigate(['add-friend'])
+  addUser() {
+    this.router.navigate(['add-friend']);
   }
-
-
 }

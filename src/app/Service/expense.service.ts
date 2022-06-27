@@ -1,34 +1,25 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http'
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Expense } from '../Model/Expense';
 import { environment } from 'src/environments/environment';
-
-
-
+import { Balance } from '../Model/Balance';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ExpenseService {
+  constructor(private http: HttpClient) {}
 
-  constructor(private http:HttpClient) { }
-
-  getExpenses() : Observable<Expense[]>{
+  getExpenses(): Observable<Expense[]> {
     return this.http.get<Expense[]>(environment.apiURL + '/expenses/');
-    
   }
 
-  getBalance(){
-    const result = this.http.get(environment.apiURL + '/expenses/getBalance');
-    return result;
+  getBalance(): Observable<Balance> {
+    return this.http.get<Balance>(environment.apiURL + '/expenses/balance');
   }
 
-  addExpense(expense:Expense) : Observable<void>{
+  addExpense(expense: Expense): Observable<void> {
     return this.http.post<void>(environment.apiURL + '/expenses/', expense);
-
   }
-
 }
-
-

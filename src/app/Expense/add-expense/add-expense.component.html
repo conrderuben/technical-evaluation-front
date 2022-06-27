@@ -1,26 +1,45 @@
 <div class="container">
-    <h3>Add expense</h3>
-    <div class="form-container">
-        <form (ngSubmit)="addExpense()">
-            <div class="input-container">
-                <label for="group">User</label>
-                <select (change)="selectChange($event)" [(ngModel)]="user" name="user" >
-                    <option *ngFor="let item of users" [ngValue]="item">{{item.name}}</option>
-                </select>
-            </div>
-            <div class="input-container">
-                <label for="amount">Amount</label>
-                <input type="number" class="form-control" id="amount" [(ngModel)]="expense.amount" name="amount">
-            </div>
-            <div class="input-container">
-                <label for="description">Description</label>
-                <input type="text" class="form-control" id="description" [(ngModel)]="expense.description" name="description">
-            </div>
-            <div class="input-container">
-                <label for="date" >Date</label>
-                <input type="date" max="{{date | date:'yyyy-MM-dd'}}" class="form-control" id="description" [(ngModel)]="expense.date" name="date">
-            </div>
-                <button class="submit-button">Save</button>
-         </form>
-    </div>
+  <h3>Add expense</h3>
+  <div class="form-container">
+    <form (ngSubmit)="addExpense()">
+      <div class="input-container">
+        <label for="group">User</label>
+        <select (change)="selectChange($event)" [(ngModel)]="user" name="user">
+          <option *ngFor="let item of users" [ngValue]="item">{{ item.name }}</option>
+        </select>
+      </div>
+      <div class="input-container">
+        <label for="amount">Amount</label>
+        <input
+          type="number"
+          class="form-control"
+          id="amount"
+          [(ngModel)]="expense.amount"
+          name="amount"
+        />
+      </div>
+      <div class="input-container">
+        <label for="description">Description</label>
+        <input
+          type="text"
+          class="form-control"
+          id="description"
+          [(ngModel)]="expense.description"
+          name="description"
+        />
+      </div>
+      <div class="input-container">
+        <label for="date">Date</label>
+        <input
+          type="date"
+          max="{{ date | date: 'yyyy-MM-dd' }}"
+          class="form-control"
+          id="description"
+          [(ngModel)]="expense.date"
+          name="date"
+        />
+      </div>
+      <button class="submit-button">Save</button>
+    </form>
+  </div>
 </div>

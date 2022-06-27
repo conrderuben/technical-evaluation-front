@@ -1,6 +1,5 @@
 # Technical Evaluation
 
-
 Front part for a technical test for a job interview.
 
 ## Development server

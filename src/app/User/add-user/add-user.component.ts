@@ -9,20 +9,16 @@ import { UserService } from 'src/app/Service/user.service';
   styleUrls: ['./add-user.component.css']
 })
 export class AddUserComponent implements OnInit {
+  user: User = new User();
 
-  user:User;
+  constructor(private userService: UserService, private router: Router) {}
 
-  constructor(private userService:UserService, private router:Router) { }
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
+  addUser() {
+    console.log(this.user);
+    this.userService.addUser(this.user).subscribe(data => {
+      this.router.navigate(['list-expenses']);
+    });
   }
-
-  addUser(){
-    console.log(this.user)
-    this.userService.addUser(this.user)
-    .subscribe(data=>{
-      this.router.navigate(['list-expenses'])
-    })
-  }
-
 }

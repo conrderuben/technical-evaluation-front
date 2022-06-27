@@ -8,9 +8,8 @@ xdescribe('ListExpensesComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ListExpensesComponent ]
-    })
-    .compileComponents();
+      declarations: [ListExpensesComponent]
+    }).compileComponents();
   });
 
   beforeEach(() => {
