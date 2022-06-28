@@ -16,7 +16,6 @@ export class AddUserComponent implements OnInit {
   ngOnInit(): void {}
 
   addUser() {
-    console.log(this.user);
     this.userService.addUser(this.user).subscribe(data => {
       this.router.navigate(['list-expenses']);
     });

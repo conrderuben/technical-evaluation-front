@@ -40,10 +40,9 @@ export class ListExpensesComponent implements OnInit {
   getTimeFromDate(expense: Expense) {
     this.date = new Date(expense.date);
     const formatter = new Intl.RelativeTimeFormat('en', {
-      numeric: 'auto',
+      numeric: 'auto'
+    });
 
-    })
-    
     const DIVISIONS = [
       { amount: 60, name: 'seconds' },
       { amount: 60, name: 'minutes' },
@@ -52,23 +51,21 @@ export class ListExpensesComponent implements OnInit {
       { amount: 4.34524, name: 'weeks' },
       { amount: 12, name: 'months' },
       { amount: Number.POSITIVE_INFINITY, name: 'years' }
-    ]
-    
-      let duration = (this.date.getTime() - new Date().getTime()) / 1000
-    
-      for (let i = 0; i <= DIVISIONS.length; i++) {
-        let division = DIVISIONS[i]
-        if (Math.abs(duration) < division.amount) {
-          return formatter.format(Math.round(duration), division.name as Intl.RelativeTimeFormatUnit)
-        }
-        duration /= division.amount
+    ];
+
+    let duration = (this.date.getTime() - new Date().getTime()) / 1000;
+
+    for (let i = 0; i <= DIVISIONS.length; i++) {
+      let division = DIVISIONS[i];
+      if (Math.abs(duration) < division.amount) {
+        return formatter.format(Math.round(duration), division.name as Intl.RelativeTimeFormatUnit);
       }
-      return "now";
+      duration /= division.amount;
+    }
+    return 'now';
   }
 
   getNameByUserId(id: Id): string {
     return this.users.find(user => user.id === id)?.name ?? '';
   }
-
 }
-
